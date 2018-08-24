@@ -2,7 +2,7 @@
   "name": "JVL-react-app",
   "version": "0.1.0",
   "description": "JVL React UI",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "NODE_ENV=test mocha --require babel-register tests/.setup.js tests/**/*-test.js --compilers css:mocha-compiler.js",
     "build": "node build/build.js",

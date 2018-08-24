@@ -2,7 +2,12 @@ const path = require('path');
 const url = require('url');
 const { app, crashReporter, BrowserWindow, Menu } = require('electron');
 
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'development';
+}
 const isDevelopment = process.env.NODE_ENV === 'development';
+
+console.log('isDevelopment=', isDevelopment);
 
 const APP_NAME = isDevelopment ? 'JVL-Sas (development)' : 'JVL-Sas';
 

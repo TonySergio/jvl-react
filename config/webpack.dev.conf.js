@@ -10,9 +10,9 @@ var paths = require('./paths');
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client',
-    'webpack/hot/only-dev-server'
+    require.resolve('react-hot-loader/patch'),
+    require.resolve('webpack-dev-server/client') + '?/',
+    require.resolve('webpack/hot/only-dev-server')
     //'./polyfills'
   ].concat(baseWebpackConfig.entry[name])
 })
