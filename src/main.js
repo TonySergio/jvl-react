@@ -59,6 +59,7 @@ app.on('ready', async () => {
   mainWindow.maximize();
 
   if (isDevelopment) {
+<<<<<<< HEAD
 
     console.log(`dev port: ${process.env.PORT}`);
 	
@@ -67,6 +68,13 @@ app.on('ready', async () => {
             protocol: 'http:',
             pathname: `localhost:${process.env.PORT || 3001}`,
             //TODO: correct common use - port: `${process.env.PORT || 3000}`,
+=======
+    mainWindow.loadURL(
+        url.format({
+            protocol: 'http:',
+            pathname: 'localhost',
+            port: `${process.env.PORT || 3000}`,
+>>>>>>> a4943ba4cd601989c0d70dde1067fc9b7e5f975c
             slashes: true
         })
     )
