@@ -16,11 +16,11 @@ import Mailbox from '@/views/Mailbox';
 import Page2 from '@/views/Page2';
 
 export const childRoutes = [
-  {
-    'path':'/home',
-    'component': Home,
-    'exactly': true
-  },
+  // {
+  //   'path':'/home',
+  //   'component': Home,
+  //   'exactly': true
+  // },
   {
     'path':'/form',
     'component': Form

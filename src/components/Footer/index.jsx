@@ -15,7 +15,7 @@ export default class commonFooter extends React.Component {
 
     return (
       <Footer style={{ textAlign: 'center' }}>
-        xxxx 版权所有 © 2015 xxxxxx.com
+        JVL Gaming © 2018
       </Footer>
     )
   }

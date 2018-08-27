@@ -24,13 +24,13 @@ class commonHeader extends React.Component {
     const menu = (
       <Menu>
         <Menu.Item>
-          选项1
+          Setting1
         </Menu.Item>
         <Menu.Item>
-          选项2
+          Setting2
         </Menu.Item>
         <Menu.Item>
-          <a onClick={this.handleLogOut}>注销</a>
+          <a onClick={this.handleLogOut}>Logout</a>
         </Menu.Item>
       </Menu>
     );

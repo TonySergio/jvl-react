@@ -1,15 +1,9 @@
 module.exports = {
     menus: [
       {
-        key: 5,
-        name: 'Home',
-        icon: 'home',
-        url: '/home'
-      },
-      {
         key: 1,
-        name: 'Pages',
-        icon: 'user',
+        name: 'Machines',
+        icon: 'laptop',
         child: [
           {
             name: 'Form',
@@ -40,8 +34,8 @@ module.exports = {
       },
       {
         key: 2,
-        name: 'Components',
-        icon: 'laptop',
+        name: 'Requests',
+        icon: 'notification',
         child: [
           {
             name: 'Cards',
@@ -49,39 +43,8 @@ module.exports = {
             url: '/cards'
           },
           {
-            name: '选项2',
+            name: 'Test',
             key: 202
-          },
-          {
-            name: '选项3',
-            key: 203
-          },
-          {
-            name: '选项4',
-            key: 204
-          }
-        ]
-      },
-      {
-        key: 3,
-        name: '导航三',
-        icon: 'notification',
-        child: [
-          {
-            name: '选项1',
-            key: 301
-          },
-          {
-            name: '选项2',
-            key: 302
-          },
-          {
-            name: '选项3',
-            key: 303
-          },
-          {
-            name: '选项4',
-            key: 304
           }
         ]
       }
