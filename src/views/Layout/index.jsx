@@ -39,11 +39,8 @@ class App extends React.Component {
           <Content style={{ margin: '0 16px' }}>
             <NavPath data={navpath} />
             <div style={{ minHeight: 360 }}>
-<<<<<<< HEAD
               {/* <Redirect to="/home"/> */}
-=======
-              <Redirect to="/home"/>
->>>>>>> a4943ba4cd601989c0d70dde1067fc9b7e5f975c
+
               {childRoutes.map((route, index) => (
                 <Route key={index} path={route.path} component={authHOC(route.component)} exactly={route.exactly} />
               ))}
