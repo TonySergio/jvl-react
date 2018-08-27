@@ -60,20 +60,20 @@ class Login extends React.Component {
           <Form layout="horizontal" onSubmit={this.handleSubmit.bind(this)} className="login-form">
             <h2 className="logo"><span>logo</span></h2>
             <FormItem>
-              {getFieldDecorator('user')(
+              {getFieldDecorator('user', {initialValue: 'admin'})(
                 <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder='admin' />
               )}
             </FormItem>
             <FormItem>
-              {getFieldDecorator('password')(
+              {getFieldDecorator('password', {initialValue: '123456'})(
                 <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type='password' placeholder='123456' />
               )}
             </FormItem>
             <p>
-              <Button className="btn-login" type='primary' size="large" icon="poweroff" loading={this.state.loading} htmlType='submit'>登录</Button>
+              <Button className="btn-login" type='primary' size="large" icon="poweroff" loading={this.state.loading} htmlType='submit'>Enter</Button>
             </p>
             <p>
-              <Button className="btn-register" size="large" icon="right-square-o" htmlType='button' onClick={this.toRegister.bind(this)} >去注册</Button>
+              <Button className="btn-register" size="large" icon="right-square-o" htmlType='button' onClick={this.toRegister.bind(this)} >Register</Button>
             </p>
           </Form>
         </Col>

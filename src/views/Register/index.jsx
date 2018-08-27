@@ -67,10 +67,10 @@ class Register extends React.Component {
               )}
             </FormItem>
             <p>
-              <Button className="btn-register" type='primary' size="large" icon="right-square-o" loading={this.state.loading} htmlType='submit'>注册</Button>
+              <Button className="btn-register" type='primary' size="large" icon="right-square-o" loading={this.state.loading} htmlType='submit'>Ok</Button>
             </p>
             <p>
-              <Button className="btn-login" size="large" icon="poweroff" htmlType='button' onClick={this.toLogin.bind(this)}>去登录</Button>
+              <Button className="btn-login" size="large" icon="poweroff" htmlType='button' onClick={this.toLogin.bind(this)}>Login page</Button>
             </p>
           </Form>
         </Col>
