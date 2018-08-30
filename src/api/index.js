@@ -32,5 +32,7 @@ mock.onGet('/randomuser').reply((config) => {
     });
   });
 });
+mock.onGet('/machines-list').reply(200, require('./mock/machines'));
+
 
 export default mockAxios;

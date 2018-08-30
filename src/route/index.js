@@ -14,6 +14,7 @@ import Steps from '@/views/Steps';
 import Cards from '@/views/Cards';
 import Mailbox from '@/views/Mailbox';
 import Page2 from '@/views/Page2';
+import TableList from '@/views/TableList';
 
 export const childRoutes = [
   // {
@@ -28,6 +29,10 @@ export const childRoutes = [
   {
     'path':'/table',
     'component': Table
+  },
+  {
+    'path':'/table-list',
+    'component': TableList
   },
   {
     'path':'/calendar',

@@ -29,7 +29,13 @@ module.exports = {
             name: 'Steps',
             key: 106,
             url: '/steps'
-          }
+          },
+          {
+            name: 'Machines List',
+            key: 107,
+            url: '/table-list'
+          },
+
         ]
       },
       {
