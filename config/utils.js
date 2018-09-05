@@ -16,7 +16,9 @@ exports.cssLoaders = function (options) {
     loader: 'css-loader',
     options: {
       minimize: process.env.NODE_ENV === 'production',
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
+      modules: true,
+      importLoaders: 1
     }
   }
 
@@ -47,7 +49,12 @@ exports.cssLoaders = function (options) {
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less'),
+    less: generateLoaders('less', {
+          javascriptEnabled: true,
+          modules: true,
+          cssModules: true,
+          less: true
+    }),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
@@ -59,11 +66,18 @@ exports.styleLoaders = function (options) {
   var output = []
   var loaders = exports.cssLoaders(options)
   for (var extension in loaders) {
-    var loader = loaders[extension]
+    var loader = loaders[extension];
     output.push({
       test: new RegExp('\\.' + extension + '$'),
       use: loader
+    });
+
+    output.push({
+      test:  new RegExp('\\.module\\.' + extension + '$'),
+      use: loader
     })
+
+
   }
   return output
 }

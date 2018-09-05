@@ -6,7 +6,7 @@ module.exports = {
         icon: 'laptop',
         child: [
           {
-            name: 'Form',
+            name: 'Create Form',
             key: 102,
             url: '/form'
           },
@@ -15,21 +15,21 @@ module.exports = {
             key: 103,
             url: '/table'
           },
-          {
-            name: 'Calendar',
-            key: 104,
-            url: '/calendar'
-          },
-          {
-            name: 'Timeline',
-            key: 105,
-            url: '/timeline'
-          },
-          {
-            name: 'Steps',
-            key: 106,
-            url: '/steps'
-          },
+          // {
+          //   name: 'Calendar',
+          //   key: 104,
+          //   url: '/calendar'
+          // },
+          // {
+          //   name: 'Timeline',
+          //   key: 105,
+          //   url: '/timeline'
+          // },
+          // {
+          //   name: 'Steps',
+          //   key: 106,
+          //   url: '/steps'
+          // },
           {
             name: 'Machines List',
             key: 107,

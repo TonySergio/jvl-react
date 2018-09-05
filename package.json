@@ -18,8 +18,10 @@
   "author": "antons",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "antd": "3.8.4",
     "axios": "^0.15.3",
+    "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.22.0",
     "g2-mobile": "2.1.13",
     "history": "^4.3.0",
@@ -34,7 +36,9 @@
     "react-router": "^4.1.0",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "setprototypeof": "1.1.0",
+    "url-polyfill": "1.0.10"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.7.1",
@@ -69,8 +73,8 @@
     "html-webpack-plugin": "^2.24.1",
     "http-proxy-middleware": "^0.17.4",
     "jsdom": "^11.0.0",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
+    "less": "2.7.2",
+    "less-loader": "4.0.5",
     "lodash-webpack-plugin": "^0.11.2",
     "mobx-react-devtools": "^4.2.6",
     "mocha": "^3.1.2",

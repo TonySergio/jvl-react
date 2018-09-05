@@ -13,7 +13,7 @@ function initTotalList(columns) {
 }
 
 
-export default class StandardTable extends PureComponent {
+export default class StandardTable extends React.Component {
   constructor(props) {
     super(props);
     const { columns } = props;
@@ -88,30 +88,33 @@ export default class StandardTable extends PureComponent {
       }),
     };
 
+    console.log('STYLE===');
+    console.log(styles.standardTable);
+
     return (
       <div className={styles.standardTable}>
         <div className={styles.tableAlert}>
-          <Alert
-            message={
-              <Fragment>
-                Selected <a style={{ fontWeight: 600 }}>{selectedRowKeys.length}</a> gggg(s)&nbsp;&nbsp;
-                {needTotalList.map(item => (
-                  <span style={{ marginLeft: 8 }} key={item.dataIndex}>
-                    {item.title}
-                    Total&nbsp;
-                    <span style={{ fontWeight: 600 }}>
-                      {item.render ? item.render(item.total) : item.total}
-                    </span>
-                  </span>
-                ))}
-                <a onClick={this.cleanSelectedKeys} style={{ marginLeft: 24 }}>
-                  Clear
-                </a>
-              </Fragment>
-            }
-            type="info"
-            showIcon
-          />
+          {/*<Alert*/}
+            {/*message={*/}
+              {/*<Fragment>*/}
+                {/*Selected <a style={{ fontWeight: 600 }}>{selectedRowKeys.length}</a> gggg(s)&nbsp;&nbsp;*/}
+                {/*{needTotalList.map(item => (*/}
+                  {/*<span style={{ marginLeft: 8 }} key={item.dataIndex}>*/}
+                    {/*{item.title}*/}
+                    {/*Total&nbsp;*/}
+                    {/*<span style={{ fontWeight: 600 }}>*/}
+                      {/*{item.render ? item.render(item.total) : item.total}*/}
+                    {/*</span>*/}
+                  {/*</span>*/}
+                {/*))}*/}
+                {/*<a onClick={this.cleanSelectedKeys} style={{ marginLeft: 24 }}>*/}
+                  {/*Clear*/}
+                {/*</a>*/}
+              {/*</Fragment>*/}
+            {/*}*/}
+            {/*type="info"*/}
+            {/*showIcon*/}
+          {/*/>*/}
         </div>
         <Table
           loading={loading}
