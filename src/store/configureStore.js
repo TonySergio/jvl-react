@@ -18,7 +18,7 @@ export default function configureStore(initialState) {
     const DevTools = require('../containers/DevTools').default;
 
     const enhancer = compose(
-      DevTools.instrument(),
+      //DevTools.instrument(),
       persistState(
         window.location.href.match(
           /[?&]debug_session=([^&#]+)\b/

@@ -9,16 +9,43 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+function getExclude(options) {
+  return function (filePath) {
+    if (/node_modules/.test(filePath)) {
+      return true;
+    }
+    if (options.cssModulesWithAffix) {
+      if (/\.module\.(css|less|sass|scss)$/.test(filePath)) return true;
+    }
+    if (options.cssModulesExcludes) {
+      for (const exclude of options.cssModulesExcludes) {
+        if (filePath.indexOf(exclude) > -1) return true;
+      }
+    }
+  }
+}
+
+
 exports.cssLoaders = function (options) {
+
+  const cssModulesConfig = {
+    modules: true,
+    //localIdentName:  process.env.NODE_ENV === 'production' ? '[local]___[hash:base64:5]' : '[name]__[local]___[hash:base64:5]'
+  };
+
+
   options = options || {}
+
+  const { cssModules } = options;
+
 
   var cssLoader = {
     loader: 'css-loader',
     options: {
       minimize: process.env.NODE_ENV === 'production',
       sourceMap: options.sourceMap,
-      modules: true,
-      importLoaders: 1
+      importLoaders: 1,
+      ...(cssModules ? cssModulesConfig : {}),
     }
   }
 
@@ -63,21 +90,52 @@ exports.cssLoaders = function (options) {
 }
 
 exports.styleLoaders = function (options) {
-  var output = []
+  var output = [];
+
+  var exclude = getExclude(options);
+
+  var loadersForNodeModules = exports.cssLoaders({
+    ...options,
+    ...{
+      cssModules: true,
+      cssModulesWithAffix: true,
+      cssModulesExcludes: true
+    },
+  });
+
   var loaders = exports.cssLoaders(options)
   for (var extension in loaders) {
     var loader = loaders[extension];
     output.push({
       test: new RegExp('\\.' + extension + '$'),
-      use: loader
+      use: loader,
+      exclude
     });
+
+    var loaderModules = loadersForNodeModules[extension];
 
     output.push({
       test:  new RegExp('\\.module\\.' + extension + '$'),
-      use: loader
+      use: loaderModules
     })
-
-
   }
+
+
+
+  for (var extension in loadersForNodeModules) {
+    var loader = loadersForNodeModules[extension];
+    output.push({
+      test: new RegExp('\\.' + extension + '$'),
+      use: loader,
+      include: /node_modules/
+    });
+
+    // output.push({
+    //   test:  new RegExp('\\.module\\.' + extension + '$'),
+    //   use: loader
+    // })
+  }
+
+
   return output
 }
